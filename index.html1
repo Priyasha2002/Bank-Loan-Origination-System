@@ -10,6 +10,7 @@
         .card:hover { transform: scale(1.05); transition: transform 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
         .navbar { margin-bottom: 30px; }
         .card-img-top { height: 200px; object-fit: cover; }
+        .hero-img { width: 100%; border-radius: 10px; margin-bottom: 30px; }
     </style>
 </head>
 <body>
@@ -30,6 +31,7 @@
 </nav>
 
 <div class="container" id="cards-section">
+    <img src="https://via.placeholder.com/1200x400?text=Corporate+Loan+Partnership" alt="Corporate Loan Banner" class="hero-img">
     <h2 class="mb-4 text-center">Types of Corporate Loans</h2>
     <div class="row g-4">
         <div class="col-md-4">
