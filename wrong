@@ -293,3 +293,49 @@ Version Information: Microsoft .NET Framework Version:4.0.30319; ASP.NET Version
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PM> Update-Database -Verbose
+C:\Users\2406688\source\repos\LoanApplicationSystem\packages\EntityFramework.6.5.1\tools\net45\any\ef6.exe database update --verbose --no-color --prefix-output --assembly C:\Users\2406688\source\repos\LoanApplicationSystem\LoanApplicationSystem\bin\LoanApplicationSystem.dll --project-dir C:\Users\2406688\source\repos\LoanApplicationSystem\LoanApplicationSystem\ --language C# --data-dir C:\Users\2406688\source\repos\LoanApplicationSystem\LoanApplicationSystem\App_Data --root-namespace LoanApplicationSystem --config C:\Users\2406688\source\repos\LoanApplicationSystem\LoanApplicationSystem\Web.config
+Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
+System.ArgumentException: Keyword not supported: 'trust server certificate'.
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget target, Action`2 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.SetConnectionString(DbConnection connection, DbConnectionPropertyInterceptionContext`1 interceptionContext)
+   at System.Data.Entity.Internal.LazyInternalConnection.TryInitializeFromAppConfig(String name, AppConfig config)
+   at System.Data.Entity.Internal.LazyInternalConnection.Initialize()
+   at System.Data.Entity.Internal.LazyInternalConnection.get_Connection()
+   at System.Data.Entity.Infrastructure.DbContextInfo..ctor(Type contextType, DbProviderInfo modelProviderInfo, AppConfig config, DbConnectionInfo connectionInfo, Func`1 resolver)
+   at System.Data.Entity.Migrations.DbMigrator..ctor(DbMigrationsConfiguration configuration, DbContext usersContext, DatabaseExistenceState existenceState, Boolean calledByCreateDatabase)
+   at System.Data.Entity.Migrations.DbMigrator..ctor(DbMigrationsConfiguration configuration)
+   at System.Data.Entity.Infrastructure.Design.Executor.CreateMigrator(DbMigrationsConfiguration configuration)
+   at System.Data.Entity.Infrastructure.Design.Executor.UpdateInternal(String targetMigration, Boolean force, DbConnectionInfo connectionInfo, String migrationsConfigurationName)
+   at System.Data.Entity.Infrastructure.Design.Executor.Update.<>c__DisplayClass0_0.<.ctor>b__0()
+   at System.Data.Entity.Infrastructure.Design.Executor.OperationBase.Execute(Action action)
+Keyword not supported: 'trust server certificate'.
+
+
+
