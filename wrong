@@ -213,3 +213,83 @@ namespace LoanApplicationSystem
 
 
 
+Server Error in '/' Application.
+Instance failure.
+Description: An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
+
+Exception Details: System.InvalidOperationException: Instance failure.
+
+Source Error:
+
+
+Line 29:                 }
+Line 30: 
+Line 31:                 db.LoanApplications.Add(model);
+Line 32:                 db.SaveChanges();
+Line 33:                 return RedirectToAction("Success");
+
+Source File: C:\Users\2406688\source\repos\LoanApplicationSystem\LoanApplicationSystem\Controllers\LoanController.cs    Line: 31
+
+Stack Trace:
+
+
+[InvalidOperationException: Instance failure.]
+   System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection) +353
+   System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection) +118
+   System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection) +268
+   System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions) +315
+   System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry) +128
+   System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry) +265
+   System.Data.SqlClient.SqlConnection.Open() +133
+   System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch(TTarget target, Action`2 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed) +98
+   System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Open(DbConnection connection, DbInterceptionContext interceptionContext) +449
+   System.Data.Entity.SqlServer.<>c__DisplayClass60_0.<UsingConnection>b__0() +558
+   System.Data.Entity.SqlServer.<>c__DisplayClass2_0.<Execute>b__0() +19
+   System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute(Func`1 operation) +224
+   System.Data.Entity.SqlServer.SqlProviderServices.UsingMasterConnection(DbConnection sqlConnection, Action`1 act) +503
+   System.Data.Entity.SqlServer.SqlProviderServices.CreateDatabaseFromScript(Nullable`1 commandTimeout, DbConnection sqlConnection, String createDatabaseScript) +120
+   System.Data.Entity.SqlServer.SqlProviderServices.DbCreateDatabase(DbConnection connection, Nullable`1 commandTimeout, StoreItemCollection storeItemCollection) +209
+   System.Data.Entity.Migrations.Utilities.DatabaseCreator.Create(DbConnection connection) +126
+   System.Data.Entity.Migrations.DbMigrator.EnsureDatabaseExists(Action mustSucceedToKeepDatabase) +157
+   System.Data.Entity.Migrations.DbMigrator.Update(String targetMigration) +112
+   System.Data.Entity.Internal.DatabaseCreator.CreateDatabase(InternalContext internalContext, Func`3 createMigrator, ObjectContext objectContext) +123
+   System.Data.Entity.Database.Create(DatabaseExistenceState existenceState) +287
+   System.Data.Entity.CreateDatabaseIfNotExists`1.InitializeDatabase(TContext context) +189
+   System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action) +75
+   System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization() +500
+   System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input) +174
+   System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action) +278
+   System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType) +21
+   System.Data.Entity.Internal.Linq.InternalSet`1.Initialize() +70
+   System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext() +21
+   System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName) +86
+   System.Data.Entity.Internal.Linq.InternalSet`1.Add(Object entity) +166
+   System.Data.Entity.DbSet`1.Add(TEntity entity) +106
+   LoanApplicationSystem.Controllers.LoanController.Apply(LoanApplication model, HttpPostedFileBase uploadDocument) in C:\Users\2406688\source\repos\LoanApplicationSystem\LoanApplicationSystem\Controllers\LoanController.cs:31
+   lambda_method(Closure , ControllerBase , Object[] ) +191
+   System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters) +35
+   System.Web.Mvc.Async.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState) +39
+   System.Web.Mvc.Async.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult) +77
+   System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult) +42
+   System.Web.Mvc.Async.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0() +80
+   System.Web.Mvc.Async.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2() +414
+   System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult) +42
+   System.Web.Mvc.Async.<>c__DisplayClass3_6.<BeginInvokeAction>b__4() +50
+   System.Web.Mvc.Async.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult) +188
+   System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult) +38
+   System.Web.Mvc.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState) +35
+   System.Web.Mvc.Async.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult) +73
+   System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult) +52
+   System.Web.Mvc.Async.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult) +39
+   System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult) +38
+   System.Web.Mvc.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState) +49
+   System.Web.Mvc.Async.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult) +73
+   System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult) +38
+   System.Web.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute() +426
+   System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step) +172
+   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) +158
+
+Version Information: Microsoft .NET Framework Version:4.0.30319; ASP.NET Version:4.8.9282.0
+
+
+
