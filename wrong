@@ -153,5 +153,7 @@ A network-related or instance-specific error occurred while establishing a conne
        providerName="System.Data.SqlClient" />
 </connectionStrings>
 
+Update-Database -ConnectionString "Data Source=LTIN469879\SQLSERVER22;Initial Catalog=LoanDB;Integrated Security=True" -ConnectionProviderName "System.Data.SqlClient" -Verbose
+
 
 
