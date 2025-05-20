@@ -105,4 +105,10 @@ System.InvalidOperationException: Instance failure.
    at System.Data.Entity.Infrastructure.Design.Executor.OperationBase.Execute(Action action)
 Instance failure.
 PM> 
+<connectionStrings>
+  <add name="DefaultConnection" 
+       connectionString="Data Source=(LocalDb)\\MSSQLLocalDB;Initial Catalog=LoanDB;Integrated Security=True" 
+       providerName="System.Data.SqlClient" />
+</connectionStrings>
+
 
