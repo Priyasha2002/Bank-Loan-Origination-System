@@ -146,3 +146,12 @@ A network-related or instance-specific error occurred while establishing a conne
 )
 
 
+
+<connectionStrings>
+  <add name="DefaultConnection" 
+       connectionString="Data Source=LTIN469879\\SQLSERVER22;Initial Catalog=LoanDB;Integrated Security=True" 
+       providerName="System.Data.SqlClient" />
+</connectionStrings>
+
+
+
